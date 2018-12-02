@@ -462,7 +462,7 @@ gulp.task('check-for-version-bump', function()
             .pipe(replace(/VERSION[\s]*:[\s]*'([\d]+)[\.]([\d]+)[\.]([\d]+)'/gi,
                 (vString, major, minor, patch)=>
                 {
-                    let nextVersion = `VERSION : '${major}.${minor}.${parseInt(patch)+1}'`;
+                    let nextVersion = `VERSION: '${major}.${minor}.${parseInt(patch)+1}'`;
                     return (latestVersion = nextVersion, nextVersion);
                 })).pipe(gulp.dest(Paths.VERSION_CONFIG_DIR));
     }
